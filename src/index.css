@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url("./assets/images/background.png");
+}
+.root {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  max-width: 414px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.play {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 100px;
+  width: 100%;
+  justify-content: space-between;
+}
+.play > h1 {
+  margin-bottom: 10rem;
+}
+.play__counter {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  animation: fadein 1s linear;
+  animation-fill-mode: forwards;
+}
+.win {
+  background-color: #6cb46cb0;
+}
+.lose {
+  background-color: #dc5b49b0;
+}
+.draw {
+  background-color: #828282b0;
+}
+.resultHands {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.stateSvg {
+  height: 250px;
+  width: 250px;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.score-container {
+  margin: 1rem 0;
+  font-size: 45px;
+  font-family: "Odibee Sans", cursive;
+  border: solid 10px;
+  background-color: #fff;
+  height: 217px;
+  width: 260px;
+}
