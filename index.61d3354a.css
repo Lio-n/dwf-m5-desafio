@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("background.4b1972f3.png");
+}
+
+.root {
+  max-width: 414px;
+  height: 100vh;
+  align-items: flex-end;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.play {
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 100px;
+  display: flex;
+}
+
+.play > h1 {
+  margin-bottom: 10rem;
+}
+
+.play__counter {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: 1s linear forwards fadein;
+  display: flex;
+  position: absolute;
+}
+
+.win {
+  background-color: #6cb46cb0;
+}
+
+.lose {
+  background-color: #dc5b49b0;
+}
+
+.draw {
+  background-color: #828282b0;
+}
+
+.resultHands {
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+
+.stateSvg {
+  height: 250px;
+  width: 250px;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.score-container {
+  height: 217px;
+  width: 260px;
+  background-color: #fff;
+  border: 10px solid;
+  margin: 1rem 0;
+  font-family: Odibee Sans, cursive;
+  font-size: 45px;
+}
+
+/*# sourceMappingURL=index.61d3354a.css.map */
