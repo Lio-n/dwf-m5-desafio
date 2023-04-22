@@ -6,7 +6,7 @@ export const initWelcome = (params) => {
     <my-play></my-play>
     `;
 
-  const button = div.querySelector("my-button");
+  const button = div.querySelector("my-button") as Element;
 
   button.addEventListener("click", () => {
     params.goTo("/instruccion");

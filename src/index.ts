@@ -7,5 +7,5 @@ import { state } from "./state";
 (function main() {
   state.init();
   const root = document.querySelector(".root");
-  initRouter(root);
+  initRouter(root as Element);
 })();

@@ -1,7 +1,8 @@
-import { state } from "../../state";
-const winSvg = require("url:../../assets/images/win.svg");
-const loseSvg = require("url:../../assets/images/lose.svg");
-const drawSvg = require("url:../../assets/images/draw.svg");
+import { state } from "../state";
+
+const winSvg = require("url:../assets/images/win.svg");
+const loseSvg = require("url:../assets/images/lose.svg");
+const drawSvg = require("url:../assets/images/draw.svg");
 
 export const initResults = (params) => {
   const div = document.createElement("div");
@@ -22,7 +23,7 @@ export const initResults = (params) => {
     // el Usuario compare su jugada con la del Bot
     let divResult = whoWin(state.whoWin(myMove, botMove));
     div.appendChild(divResult);
-    const button = divResult.querySelector("my-button");
+    const button = divResult.querySelector("my-button") as Element;
 
     button.addEventListener("click", () => {
       params.goTo("/instruccion");
@@ -63,7 +64,7 @@ const whoWin = (data) => {
   </div>
   <my-button>Volver a Jugar</my-button>
   `;
-  const imageContainer = divResult.querySelector(".image-container");
+  const imageContainer = divResult.querySelector(".image-container") as Element;
   imageContainer.appendChild(imgState);
 
   return divResult;

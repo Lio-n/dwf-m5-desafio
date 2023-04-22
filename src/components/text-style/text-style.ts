@@ -8,7 +8,7 @@ export class Text extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: "open" });
-    if (this.tags.includes(this.getAttribute("tag"))) {
+    if (this.tags.includes(this.getAttribute("tag") as string)) {
       this.tag = this.getAttribute("tag") || this.tag;
     }
     this.render();

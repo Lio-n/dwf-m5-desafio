@@ -3,6 +3,7 @@ type Game = {
   myScore: number;
   botScore: number;
 };
+
 export const state = {
   data: {
     currentGame: {
@@ -19,13 +20,12 @@ export const state = {
   // Initializar
   init() {
     // Get the local data
-    const localData = JSON.parse(localStorage.getItem("saved-state"));
+    const localData = JSON.parse(localStorage.getItem("saved-state") as string);
+
     // If localdata retuns "null", do nothing
-    if (!localData) {
-      return;
-    } else {
-      this.setState(localData);
-    }
+    if (!localData) return;
+
+    this.setState(localData);
   },
   // Get the data
   getState() {
@@ -59,13 +59,9 @@ export const state = {
     const ganePiedra = myPlay == "rock" && botPlay == "scissors";
 
     // Si esto retorna False Gana el Bot
-    result = [ganeTijera, ganePapel, ganePiedra].includes(true)
-      ? "Win"
-      : "Lose";
+    result = [ganeTijera, ganePapel, ganePiedra].includes(true) ? "Win" : "Lose";
 
-    result == "Win"
-      ? this.pushToHistory({ myScore: 1, botScore: 0 })
-      : this.pushToHistory({ myScore: 0, botScore: 1 });
+    result == "Win" ? this.pushToHistory({ myScore: 1, botScore: 0 }) : this.pushToHistory({ myScore: 0, botScore: 1 });
     return result;
   },
 

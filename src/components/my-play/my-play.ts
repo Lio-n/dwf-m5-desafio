@@ -2,6 +2,8 @@ const rock = require("url:../../assets/images/rock.svg");
 const paper = require("url:../../assets/images/paper.svg");
 const scissors = require("url:../../assets/images/scissors.svg");
 
+const tags_options = { rock, paper, scissors };
+
 export class Play extends HTMLElement {
   shadow: ShadowRoot;
   tag: string;
@@ -21,16 +23,9 @@ export class Play extends HTMLElement {
     const div = document.createElement("div");
     div.classList.add("root");
 
-    if (this.tag == "rock") {
-      div.innerHTML = `<img class="rock" src="${rock}" alt="rock">`;
-    }
-    if (this.tag == "paper") {
-      div.innerHTML = `<img class="paper" src="${paper}" alt="paper">`;
-    }
-    if (this.tag == "scissors") {
-      div.innerHTML = `<img class="scissors" src="${scissors}" alt="scissors">`;
-    }
-    if (this.tag == "") {
+    if (tags_options[this.tag]) {
+      div.innerHTML = `<img class="rock" src="${tags_options[this.tag]}" alt="rock">`;
+    } else {
       div.innerHTML = `
       <img class="rock" src="${rock}" alt="rock">
       <img class="paper" src="${paper}" alt="paper">

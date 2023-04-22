@@ -1,7 +1,7 @@
-import { initWelcome } from "./pages/welcome/welcome";
-import { initInstruccion } from "./pages/instruccion/intruccion";
-import { initPlay } from "./pages/play/play";
-import { initResults } from "./pages/results/results";
+import { initWelcome } from "./pages/welcome";
+import { initInstruccion } from "./pages/intruccion";
+import { initPlay } from "./pages/play";
+import { initResults } from "./pages/results";
 
 const routes = [
   {

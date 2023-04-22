@@ -1,4 +1,4 @@
-import { state } from "../../state";
+import { state } from "../state";
 
 export const initPlay = (params) => {
   const div = document.createElement("div");
@@ -40,14 +40,14 @@ export const initPlay = (params) => {
   const myPlayEl = document.createElement("my-play");
   myPlayEl.classList.add("isSelected");
   div.appendChild(myPlayEl);
-  myPlayEl.addEventListener("click", (e) => {
+  myPlayEl.addEventListener("click", (e: any) => {
     // I use 'any' to avoid problems
     // when sending data to whoWin()
-    const myMove = e.path[0].className as any;
-    const botMove = botMoveAl() as any;
+    const myMove = e.originalTarget.className;
+    const botMove = botMoveAl();
 
     // Guardo la Jugada del Usuario y del Bot
-    state.setMove(myMove, botMove);
+    state.setMove(myMove, botMove as any);
     isSelected = true;
   });
 
